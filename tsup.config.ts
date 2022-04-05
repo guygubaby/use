@@ -1,13 +1,14 @@
 import type { Options } from 'tsup'
 
 export const tsup: Options = {
-  splitting: false,
+  // splitting: false,
   sourcemap: false,
-  clean: true,
   format: ['cjs', 'esm'],
   dts: true,
-  entryPoints: [
+  entry: [
     'src/index.ts',
   ],
-  external: [],
+  external: [
+    'vue',
+  ],
 }

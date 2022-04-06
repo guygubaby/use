@@ -1,6 +1,6 @@
 {
   "name": "@bryce-loskie/use",
-  "version": "0.0.2-beta.1",
+  "version": "0.0.3",
   "packageManager": "pnpm@6.32.3",
   "description": "Opinionated vue hooks",
   "main": "dist/index.js",

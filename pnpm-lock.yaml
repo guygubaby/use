@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@bryce-loskie/eslint-config': ^1.0.13
+  '@bryce-loskie/eslint-config': ^1.0.14
   '@bryce-loskie/utils': ^0.1.21
   '@types/node': ^17.0.23
   '@vueuse/core': ^8.2.4
@@ -19,7 +19,7 @@ dependencies:
   '@vueuse/core': 8.2.4_vue@3.2.31
 
 devDependencies:
-  '@bryce-loskie/eslint-config': 1.0.13_eslint@8.12.0+typescript@4.6.3
+  '@bryce-loskie/eslint-config': 1.0.14_eslint@8.12.0+typescript@4.6.3
   '@types/node': 17.0.23
   eslint: 8.12.0
   esno: 0.14.1
@@ -59,8 +59,8 @@ packages:
     hasBin: true
     dev: true
 
-  /@bryce-loskie/eslint-config-basic/1.0.13_eslint@8.12.0+typescript@4.6.3:
-    resolution: {integrity: sha512-6T0H+FpbOUsi0dlgUoArPqq5Iukf1uT7MkrqHcFIhqnUdKTsnffK9PekY0S5MJRZDJSgGLPr7Y1eXvDUdhrSqw==}
+  /@bryce-loskie/eslint-config-basic/1.0.14_eslint@8.12.0+typescript@4.6.3:
+    resolution: {integrity: sha512-ilpfucL93LWW7bFMPT6NYX+7b5WUCy+Cb8WMXdgEVuRRufY/pnF4qRZVkQH81BrjSqM3umKj3UHCIkZq67K0Sw==}
     peerDependencies:
       eslint: '>=7.4.0'
     dependencies:
@@ -83,12 +83,12 @@ packages:
       - typescript
     dev: true
 
-  /@bryce-loskie/eslint-config-react/1.0.13_eslint@8.12.0+typescript@4.6.3:
-    resolution: {integrity: sha512-um/9Ht9MyiBEPdQEvyWDK314ylssl2i427V0iPxvTpwnXbj1xfU3IIYx/BfF+Jw+m3VulMPPPV3bve9nlveW7A==}
+  /@bryce-loskie/eslint-config-react/1.0.14_eslint@8.12.0+typescript@4.6.3:
+    resolution: {integrity: sha512-apxMpvomABbdYBjybY18g5DZBtZvkIVjajv4BZvSMTaADkY6ZLsGNp8lTrG2kxdEA+C2M4fJQValLhNtYUf7Lw==}
     peerDependencies:
       eslint: '>=7.4.0'
     dependencies:
-      '@bryce-loskie/eslint-config-ts': 1.0.13_eslint@8.12.0+typescript@4.6.3
+      '@bryce-loskie/eslint-config-ts': 1.0.14_eslint@8.12.0+typescript@4.6.3
       eslint: 8.12.0
       eslint-plugin-react: 7.29.4_eslint@8.12.0
     transitivePeerDependencies:
@@ -96,13 +96,13 @@ packages:
       - typescript
     dev: true
 
-  /@bryce-loskie/eslint-config-ts/1.0.13_eslint@8.12.0+typescript@4.6.3:
-    resolution: {integrity: sha512-hoHOiyk5FwUQdE0upiDIs+nRQQRYuFSfpTrADCfwOVCZvl+xCAJzgaCdw9STQ3L+TVqB+id+Zok0a08UJ83XDQ==}
+  /@bryce-loskie/eslint-config-ts/1.0.14_eslint@8.12.0+typescript@4.6.3:
+    resolution: {integrity: sha512-jKSUb+bwwhJQOCDPNv/WzMrkDSAkAYFmnSgJfcCIP5rK6ebUW0yfkPTDBHO6ry3C80cWNhlghb+btyFg5yVLtQ==}
     peerDependencies:
       eslint: '>=7.4.0'
       typescript: '>=4.0'
     dependencies:
-      '@bryce-loskie/eslint-config-basic': 1.0.13_eslint@8.12.0+typescript@4.6.3
+      '@bryce-loskie/eslint-config-basic': 1.0.14_eslint@8.12.0+typescript@4.6.3
       '@typescript-eslint/eslint-plugin': 5.18.0_a07dca3bdfc4bfa60f4dda0c1f9e3287
       '@typescript-eslint/parser': 5.18.0_eslint@8.12.0+typescript@4.6.3
       eslint: 8.12.0
@@ -111,12 +111,12 @@ packages:
       - supports-color
     dev: true
 
-  /@bryce-loskie/eslint-config-vue/1.0.13_eslint@8.12.0+typescript@4.6.3:
-    resolution: {integrity: sha512-FU2+illDK2p+590gxCC5HL4z6IqCj79HFVVYbQ29/rZsdNahAJotJccYfosQ0q6O8yRljIIGFeSh67IlYAIAYw==}
+  /@bryce-loskie/eslint-config-vue/1.0.14_eslint@8.12.0+typescript@4.6.3:
+    resolution: {integrity: sha512-bW8r41VuuqStP3yu1GapiHEt13RGl9HBbtAVFbDIYBJaAODLz1pU4nSAcBKREFyKoBjwnYLHPhYH4OVVnUswhA==}
     peerDependencies:
       eslint: '>=7.4.0'
     dependencies:
-      '@bryce-loskie/eslint-config-ts': 1.0.13_eslint@8.12.0+typescript@4.6.3
+      '@bryce-loskie/eslint-config-ts': 1.0.14_eslint@8.12.0+typescript@4.6.3
       eslint: 8.12.0
       eslint-plugin-vue: 7.20.0_eslint@8.12.0
     transitivePeerDependencies:
@@ -124,13 +124,13 @@ packages:
       - typescript
     dev: true
 
-  /@bryce-loskie/eslint-config/1.0.13_eslint@8.12.0+typescript@4.6.3:
-    resolution: {integrity: sha512-rFcPQ83w4pKUEwOUm5TvZGIV5Cyv9oK8cGffFt5xjAtSShp3xauGl+yZ66HR5vLYZo7N6B9XJJJy9tvBAzzmqQ==}
+  /@bryce-loskie/eslint-config/1.0.14_eslint@8.12.0+typescript@4.6.3:
+    resolution: {integrity: sha512-wDAg9u35pDjm9aH2zGJcZQlRrGM27kSQF4F6v2cq0KLgaM6gbrDlGsCkbJhYjk5evAZB8y/3rCSLr4ITkLjSmA==}
     peerDependencies:
       eslint: '>=7.4.0'
     dependencies:
-      '@bryce-loskie/eslint-config-react': 1.0.13_eslint@8.12.0+typescript@4.6.3
-      '@bryce-loskie/eslint-config-vue': 1.0.13_eslint@8.12.0+typescript@4.6.3
+      '@bryce-loskie/eslint-config-react': 1.0.14_eslint@8.12.0+typescript@4.6.3
+      '@bryce-loskie/eslint-config-vue': 1.0.14_eslint@8.12.0+typescript@4.6.3
       '@typescript-eslint/eslint-plugin': 5.18.0_a07dca3bdfc4bfa60f4dda0c1f9e3287
       '@typescript-eslint/parser': 5.18.0_eslint@8.12.0+typescript@4.6.3
       eslint: 8.12.0

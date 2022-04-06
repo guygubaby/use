@@ -1,4 +1,5 @@
 import type { Fn } from '@bryce-loskie/utils'
+import { runAll } from '@bryce-loskie/utils'
 import { tryOnScopeDispose } from '@vueuse/core'
 
 /**
@@ -7,14 +8,14 @@ import { tryOnScopeDispose } from '@vueuse/core'
  * Or you can just clean up manually.
  */
 export const useCleanup = () => {
-  const cleanups: Fn[] = []
+  const cleanup: Fn[] = []
 
   const dispose = () => {
-    cleanups.forEach(fn => fn())
-    cleanups.length = 0
+    runAll(cleanup)
+    cleanup.length = 0
   }
 
   tryOnScopeDispose(dispose)
 
-  return [cleanups, dispose] as const
+  return [cleanup, dispose] as const
 }

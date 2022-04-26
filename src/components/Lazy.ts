@@ -1,4 +1,5 @@
-import { VNode, Fragment, defineComponent, h, useSlots } from 'vue'
+import type { VNode } from 'vue'
+import { Fragment, defineComponent, h, useSlots } from 'vue'
 import { useLazyRender } from '../hooks'
 import { createBEM } from '../utils'
 
@@ -17,16 +18,16 @@ const Lazy = defineComponent({
   props: {
     renderWhen: {
       type: Boolean,
-      required: true
+      required: true,
     },
     lazyRender: {
       type: Boolean,
-      default: true
+      default: true,
     },
     delay: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   setup(props) {
     let renderFunc: unknown
@@ -38,19 +39,20 @@ const Lazy = defineComponent({
      * Otherwise, use fallback / loading as placeholder, and lazy render it
      */
     if (props.renderWhen) {
-      renderFunc = () => h(Fragment, slots.default!())
-    } else {
+      renderFunc = () => h(Fragment, slots.default?.())
+    }
+    else {
       const fallback = slots.fallback || slots.loading || renderDefaultFallback
       const lazyRender = useLazyRender(
         () => props.renderWhen || !props.lazyRender,
         props.delay,
-        fallback
+        fallback,
       )
-      renderFunc = lazyRender(() => h(Fragment, slots.default!()))
+      renderFunc = lazyRender(() => h(Fragment, slots.default?.()))
     }
 
     return () => (renderFunc as RenderFunc)()
-  }
+  },
 })
 
 export default Lazy

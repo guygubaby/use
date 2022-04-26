@@ -1,20 +1,16 @@
 function genBem(name: string, mods?: Mods): string {
-  if (!mods) {
-    return ''
-  }
+  if (!mods) return ''
 
-  if (typeof mods === 'string') {
+  if (typeof mods === 'string')
     return ` ${name}--${mods}`
-  }
 
-  if (Array.isArray(mods)) {
+  if (Array.isArray(mods))
     return mods.reduce<string>((ret, item) => ret + genBem(name, item), '')
-  }
 
   return Object.keys(mods).reduce((ret, key) => ret + (mods[key] ? genBem(name, key) : ''), '')
 }
 
-export type Mod = string | { [key: string]: any }
+export type Mod = string | Record<string, any>
 export type Mods = Mod | Mod[]
 
 /**

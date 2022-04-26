@@ -10,7 +10,7 @@ export enum FpsEnum {
 /**
  * Defer load hook for performance optimization.
  * @param totalPriorityRef Total priority ref to use
- * @param fps Your desired fps, default is 60, can be a value of `FpsEnum`
+ * @param fps Your desired fps, default is 30, can be a value of `FpsEnum`
  * @returns Should render function with the param of `priority`, when the priority is higher than tick, this function will return true
  */
 export const useDefer = (totalPriorityRef: MaybeRef<number>, fps: FpsEnum = FpsEnum.Fps30) => {

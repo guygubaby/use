@@ -20,8 +20,8 @@ import { h, render } from 'vue'
  * ```
  */
 export const mountComponent = <T extends { $props: any }>(component: Component<T>, props: T['$props']) => {
-  const vm = h(component, props)
+  const vnode = h(component, props)
   const container = document.createElement('div')
-  render(vm, container)
+  render(vnode, container)
   return container.firstElementChild!
 }

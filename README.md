@@ -1,6 +1,6 @@
 # use
 
-## Opinionated vue hooks and componets
+## Opinionated vue related miscellaneous
 
 [![NPM version](https://img.shields.io/npm/v/@bryce-loskie/use?color=a1b858&label=)](https://www.npmjs.com/package/@bryce-loskie/use)
 

@@ -35,6 +35,6 @@ export function BEM(name: string) {
 }
 
 export function createBEM(name: string) {
-  const prefixedName = `nexhome-${name}`
+  const prefixedName = `bem-${name}`
   return [prefixedName, BEM(prefixedName)] as const
 }

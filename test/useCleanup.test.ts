@@ -1,5 +1,5 @@
 import { describe, expect, fn, it } from 'vitest'
-import { useCleanup } from '../src/useCleanup'
+import { useCleanup } from '../src/index'
 
 describe('start test useCleanup', () => {
   it('should be defined', () => {

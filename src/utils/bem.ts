@@ -1,5 +1,6 @@
 function genBem(name: string, mods?: Mods): string {
-  if (!mods) return ''
+  if (!mods)
+    return ''
 
   if (typeof mods === 'string')
     return ` ${name}--${mods}`

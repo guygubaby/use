@@ -29,7 +29,8 @@ export const useLazyRender = (
   unwatch = watch(
     show,
     (val) => {
-      if (!val) return
+      if (!val)
+        return
       initOnce()
     },
     {

@@ -3,6 +3,16 @@
   "version": "0.1.2",
   "packageManager": "pnpm@6.32.3",
   "description": "Opinionated vue hooks and componets",
+  "keywords": [
+    "vue hooks"
+  ],
+  "license": "MIT",
+  "author": "guygubaby <guygubaby@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guygubaby/use.git"
+  },
+  "funding": "https://github.com/sponsors/guygubaby",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -21,24 +31,14 @@
       ]
     }
   },
-  "funding": "https://github.com/sponsors/guygubaby",
-  "author": "guygubaby <guygubaby@gmail.com>",
-  "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "bugs": {
     "url": "https://github.com/guygubaby/use/issues"
   },
   "homepage": "https://github.com/guygubaby/use#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/guygubaby/use.git"
-  },
-  "keywords": [
-    "vue hooks"
-  ],
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "prepublishOnly": "pnpm build",
     "start": "esno src/index.ts",
@@ -49,8 +49,15 @@
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "dependencies": {
+    "@bryce-loskie/utils": "^0.1.30",
+    "@vueuse/core": "^8.2.4"
+  },
   "devDependencies": {
-    "@bryce-loskie/eslint-config": "^1.0.14",
+    "@bryce-loskie/eslint-config": "^2.0.0",
     "@types/node": "^17.0.23",
     "bumpp": "^7.1.1",
     "eslint": "^8.12.0",
@@ -61,12 +68,5 @@
     "vite": "^2.9.1",
     "vitest": "^0.8.4",
     "vue": "^3.2.31"
-  },
-  "peerDependencies": {
-    "vue": "^3.0.0"
-  },
-  "dependencies": {
-    "@bryce-loskie/utils": "^0.1.21",
-    "@vueuse/core": "^8.2.4"
   }
 }

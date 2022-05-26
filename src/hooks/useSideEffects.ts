@@ -25,7 +25,7 @@ export const useSideEffects = () => {
    * Add a side effect to the list of side effects
    * @param effect - The side effect to add
    */
-  const push = (effect: Fn) => {
+  const add = (effect: Fn) => {
     effects.push(effect)
   }
 
@@ -40,7 +40,7 @@ export const useSideEffects = () => {
   tryOnScopeDispose(dispose)
 
   return {
-    push,
+    add,
     dispose,
   }
 }

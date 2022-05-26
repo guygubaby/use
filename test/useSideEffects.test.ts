@@ -9,7 +9,7 @@ describe('start test useSideEffects', () => {
   it('should works', () => {
     const sideEffects = useSideEffects()
     const fakeFn = vi.fn()
-    sideEffects.push(fakeFn)
+    sideEffects.add(fakeFn)
     sideEffects.dispose()
     expect(fakeFn).toHaveBeenCalled()
   })

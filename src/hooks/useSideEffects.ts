@@ -2,6 +2,13 @@ import type { Fn } from '@bryce-loskie/utils'
 import { runAll } from '@bryce-loskie/utils'
 import { tryOnScopeDispose } from '@vueuse/core'
 
+interface DisposableArray<T> extends Array<T> {
+  /**
+   * Dispose all side effects
+   */
+  dispose: () => void
+}
+
 /**
  * This hook will automatically clean up
  * any sideEffects that are pushed into it
@@ -21,17 +28,6 @@ import { tryOnScopeDispose } from '@vueuse/core'
 export const useSideEffects = () => {
   const effects: Fn[] = []
 
-  /**
-   * Add a side effect to the list of side effects
-   * @param effect - The side effect to add
-   */
-  const add = (effect: Fn) => {
-    effects.push(effect)
-  }
-
-  /**
-   * Dispose all side effects
-   */
   const dispose = () => {
     runAll(effects)
     effects.length = 0
@@ -39,8 +35,12 @@ export const useSideEffects = () => {
 
   tryOnScopeDispose(dispose)
 
-  return {
-    add,
-    dispose,
-  }
+  Object.defineProperty(effects, 'dispose', {
+    enumerable: false,
+    configurable: false,
+    writable: false,
+    value: dispose,
+  })
+
+  return effects as DisposableArray<Fn>
 }

@@ -2,7 +2,7 @@ import type { Fn } from '@bryce-loskie/utils'
 import { runAll } from '@bryce-loskie/utils'
 import { tryOnScopeDispose } from '@vueuse/core'
 
-interface DisposableArray<T> extends Array<T> {
+export interface DisposableArray extends Array<Fn> {
   /**
    * Dispose all side effects
    */
@@ -42,5 +42,5 @@ export const useSideEffects = () => {
     value: dispose,
   })
 
-  return effects as DisposableArray<Fn>
+  return effects as DisposableArray
 }

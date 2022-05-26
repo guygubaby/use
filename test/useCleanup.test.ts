@@ -1,4 +1,4 @@
-import { describe, expect, fn, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { useCleanup } from '../src/index'
 
 describe('start test useCleanup', () => {
@@ -8,7 +8,7 @@ describe('start test useCleanup', () => {
 
   it('should works', () => {
     const [cleanups, dispose] = useCleanup()
-    const fakeFn = fn()
+    const fakeFn = vi.fn()
     cleanups.push(fakeFn)
     expect(cleanups.length).toEqual(1)
     dispose()

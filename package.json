@@ -52,12 +52,9 @@
   "peerDependencies": {
     "vue": "^3.0.0"
   },
-  "dependencies": {
-    "@bryce-loskie/utils": "^0.1.35",
-    "@vueuse/core": "^8.7.4"
-  },
   "devDependencies": {
     "@bryce-loskie/eslint-config": "^2.0.2",
+    "@bryce-loskie/utils": "^0.1.35",
     "@types/node": "^18.0.0",
     "bumpp": "^8.2.1",
     "eslint": "^8.18.0",

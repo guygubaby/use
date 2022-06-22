@@ -1,12 +1,19 @@
 import type { Fn } from '@bryce-loskie/utils'
 import { runAll } from '@bryce-loskie/utils'
-import { tryOnScopeDispose } from '@vueuse/core'
+import { tryOnScopeDispose } from '../misc'
 
 export interface DisposableArray extends Array<Fn> {
   /**
    * Dispose all side effects
    */
   dispose: () => void
+}
+
+export interface UseSideEffectsOptions {
+  /**
+   * If true, will automatically dispose when scope is destroyed
+   */
+  autoDispose?: boolean
 }
 
 /**
@@ -25,15 +32,19 @@ export interface DisposableArray extends Array<Fn> {
     sideEffects.dispose()
  * ```
  */
-export const useSideEffects = () => {
+export const useSideEffects = (options: UseSideEffectsOptions = {}) => {
   const effects: Fn[] = []
+
+  const { autoDispose = true } = options
 
   const dispose = () => {
     runAll(effects)
     effects.length = 0
   }
 
-  tryOnScopeDispose(dispose)
+  tryOnScopeDispose(() => {
+    autoDispose && dispose()
+  })
 
   Object.defineProperty(effects, 'dispose', {
     enumerable: false,

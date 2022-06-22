@@ -1,8 +1,8 @@
 import type { Fn } from '@bryce-loskie/utils'
 import { noop, runOnce, sleep } from '@bryce-loskie/utils'
-import { tryOnScopeDispose } from '@vueuse/core'
 import type { Slot, WatchSource } from 'vue'
 import { ref, watch } from 'vue'
+import { tryOnScopeDispose } from '../misc'
 
 export const useLazyRender = (
   show: WatchSource<boolean | undefined>,

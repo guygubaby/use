@@ -11,7 +11,5 @@ export const tsup: Options = {
   ],
   external: [
     'vue',
-    '@vueuse/core',
-    '@bryce-loskie/utils',
   ],
 }

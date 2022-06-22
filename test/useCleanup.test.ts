@@ -7,7 +7,7 @@ describe('start test useCleanup', () => {
   })
 
   it('should works', () => {
-    const [cleanups, dispose] = useCleanup()
+    const [cleanups, dispose] = useCleanup({ autoDispose: false })
     const fakeFn = vi.fn()
     cleanups.push(fakeFn)
     expect(cleanups.length).toEqual(1)

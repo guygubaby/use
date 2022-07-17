@@ -1,6 +1,6 @@
 {
   "name": "@bryce-loskie/use",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "packageManager": "pnpm@6.32.3",
   "description": "Opinionated vue hooks and componets",
   "author": "guygubaby <guygubaby@gmail.com>",
@@ -21,8 +21,8 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
     }
   },
   "main": "dist/index.js",

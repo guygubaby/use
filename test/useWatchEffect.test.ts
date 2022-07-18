@@ -1,16 +1,16 @@
 import { sleep } from '@bryce-loskie/utils'
 import { describe, expect, it, vi } from 'vitest'
 import { ref } from 'vue'
-import { useWatchHook } from '../src'
+import { useWatchEffect } from '../src'
 
-describe('test useWatchHook', () => {
+describe('test useWatchEffect', () => {
   it('should works', async () => {
     const isShow = ref(false)
 
     const fn1 = vi.fn()
     const fn2 = vi.fn()
 
-    const { onTrue, onFalse } = useWatchHook(isShow)
+    const { onTrue, onFalse } = useWatchEffect(isShow)
 
     onTrue(fn1)
 

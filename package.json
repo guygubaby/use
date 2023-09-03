@@ -1,6 +1,6 @@
 {
   "name": "@bryce-loskie/use",
-  "version": "0.1.11",
+  "version": "0.2.0",
   "packageManager": "pnpm@8.7.1",
   "description": "Opinionated vue hooks and componets",
   "author": "guygubaby <guygubaby@gmail.com>",

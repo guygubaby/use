@@ -44,7 +44,7 @@
     "start": "esno src/index.ts",
     "dev": "pnpm build -- --watch",
     "build": "tsup",
-    "release": "bumpp --commit --push --tag",
+    "release": "bumpp --commit --push --tag && pnpm publish --access public",
     "lint": "eslint .",
     "test": "vitest",
     "typecheck": "tsc --noEmit"

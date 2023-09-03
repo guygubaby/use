@@ -13,7 +13,7 @@ export enum FpsEnum {
  * @param fps Your desired fps, default is 30, can be a value of `FpsEnum`
  * @returns Should render function with the param of `priority`, when the priority is higher than tick, this function will return true
  */
-export const useDefer = (totalPriorityRef: MaybeRef<number>, fps: FpsEnum = FpsEnum.Fps30) => {
+export function useDefer(totalPriorityRef: MaybeRef<number>, fps: FpsEnum = FpsEnum.Fps30) {
   const tick = ref(0)
   const flushFunc = fps === FpsEnum.Fps30 ? nextFrame : raf
 

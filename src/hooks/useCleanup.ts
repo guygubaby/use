@@ -14,7 +14,7 @@ export interface UseCleanupOptions {
  * any side effects pushed to the cleanup stack.
  * Or you can just clean up manually.
  */
-export const useCleanup = (options: UseCleanupOptions = {}) => {
+export function useCleanup(options: UseCleanupOptions = {}) {
   const cleanup: Fn[] = []
   const { autoDispose = true } = options
 

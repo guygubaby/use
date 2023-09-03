@@ -4,11 +4,9 @@ import type { Slot, WatchSource } from 'vue'
 import { ref, watch } from 'vue'
 import { tryOnScopeDispose } from '../misc'
 
-export const useLazyRender = (
-  show: WatchSource<boolean | undefined>,
+export function useLazyRender(show: WatchSource<boolean | undefined>,
   delay = 0,
-  fallback?: Slot | (() => JSX.Element),
-) => {
+  fallback?: Slot | (() => JSX.Element)) {
   let unwatch: Fn = noop
   const inited = ref(false)
 

@@ -32,7 +32,7 @@ export interface UseSideEffectsOptions {
     sideEffects.dispose()
  * ```
  */
-export const useSideEffects = (options: UseSideEffectsOptions = {}) => {
+export function useSideEffects(options: UseSideEffectsOptions = {}) {
   const effects: Fn[] = []
 
   const { autoDispose = true } = options

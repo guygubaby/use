@@ -46,7 +46,7 @@ class Emitter {
     })
     ```
  */
-export const useWatchEffect = (source: WatchSource<boolean>, options?: WatchOptions<boolean> | undefined) => {
+export function useWatchEffect(source: WatchSource<boolean>, options?: WatchOptions<boolean> | undefined) {
   const emitter = new Emitter()
 
   const unWatch = watch(source, (value) => {

@@ -19,7 +19,7 @@ import { h, render } from 'vue'
  *
  * ```
  */
-export const mountComponent = <T extends { $props: any }>(component: Component<T>, props: T['$props']) => {
+export function mountComponent<T extends { $props: any }>(component: Component<T>, props: T['$props']) {
   const vnode = h(component, props)
   const container = document.createElement('div')
   render(vnode, container)

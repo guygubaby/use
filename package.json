@@ -1,7 +1,7 @@
 {
   "name": "@bryce-loskie/use",
   "version": "0.1.11",
-  "packageManager": "pnpm@6.32.3",
+  "packageManager": "pnpm@8.7.1",
   "description": "Opinionated vue hooks and componets",
   "author": "guygubaby <guygubaby@gmail.com>",
   "license": "MIT",
@@ -25,7 +25,7 @@
       "import": "./dist/index.mjs"
     }
   },
-  "main": "dist/index.js",
+  "main": "dist/index.mjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "typesVersions": {
@@ -53,17 +53,16 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@bryce-loskie/eslint-config": "^2.0.2",
-    "@bryce-loskie/utils": "^0.1.35",
-    "@types/node": "^18.0.0",
-    "bumpp": "^8.2.1",
-    "eslint": "^8.18.0",
-    "esno": "^0.16.3",
-    "rimraf": "^3.0.2",
-    "tsup": "^6.1.2",
-    "typescript": "^4.7.4",
-    "vite": "^2.9.12",
-    "vitest": "^0.15.2",
-    "vue": "^3.2.37"
+    "@bryce-loskie/eslint-config": "^2.1.4",
+    "@bryce-loskie/utils": "^0.3.0",
+    "@types/node": "^20.5.9",
+    "bumpp": "^9.2.0",
+    "eslint": "^8.48.0",
+    "esno": "^0.17.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vitest": "^0.34.3",
+    "vue": "^3.3.4"
   }
 }

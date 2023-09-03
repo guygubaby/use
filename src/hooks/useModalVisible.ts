@@ -6,7 +6,7 @@ type ModalInstance = ComponentInternalInstance & {
   emitsOptions?: Record<string, null>
 }
 
-export const useModalVisible = () => {
+export function useModalVisible() {
   const instance = getCurrentInstance() as ModalInstance
   assert(!!instance, 'useModalVisible can only be called inside xxx-modal component setup function')
 

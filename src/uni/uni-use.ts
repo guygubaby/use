@@ -23,7 +23,6 @@ export {
   usePrevRoute,
   useProvider,
   useRequest,
-  useRoute,
   useRouter,
   useScanCode,
   useScreenBrightness,

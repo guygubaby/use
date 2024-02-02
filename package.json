@@ -51,12 +51,14 @@
   "peerDependencies": {
     "vue": "^3.0.0"
   },
+  "dependencies": {
+    "@uni-helper/uni-use": "^0.19.6"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.3",
     "@bryce-loskie/utils": "^0.3.4",
     "@dcloudio/types": "^3.4.7",
     "@types/node": "^20.11.16",
-    "@uni-helper/uni-use": "^0.19.6",
     "@vueuse/core": "9.x.x",
     "bumpp": "^9.3.0",
     "eslint": "^8.56.0",

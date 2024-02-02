@@ -1,8 +1,8 @@
 {
   "name": "@bryce-loskie/use",
   "version": "0.2.0",
-  "packageManager": "pnpm@8.7.1",
-  "description": "Opinionated vue hooks and componets",
+  "packageManager": "pnpm@8.15.1",
+  "description": "Opinionated vue / uniapp hooks and componets",
   "author": "guygubaby <guygubaby@gmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/guygubaby",
@@ -15,14 +15,20 @@
     "url": "https://github.com/guygubaby/use/issues"
   },
   "keywords": [
-    "vue hooks"
+    "vue hooks",
+    "uniapp hooks"
   ],
   "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./uni": {
+      "types": "./dist/uni.d.ts",
+      "import": "./dist/uni.mjs",
+      "require": "./dist/uni.js"
     }
   },
   "main": "dist/index.mjs",
@@ -37,6 +43,7 @@
     }
   },
   "files": [
+    "*.d.ts",
     "dist"
   ],
   "scripts": {
@@ -50,19 +57,23 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
+    "@tanstack/vue-query": "4.x.x",
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@bryce-loskie/eslint-config": "^2.1.4",
-    "@bryce-loskie/utils": "^0.3.0",
-    "@types/node": "^20.5.9",
-    "bumpp": "^9.2.0",
-    "eslint": "^8.48.0",
-    "esno": "^0.17.0",
-    "tsup": "^7.2.0",
-    "typescript": "^5.2.2",
-    "vite": "^4.4.9",
-    "vitest": "^0.34.3",
-    "vue": "^3.3.4"
+    "@antfu/eslint-config": "^2.6.3",
+    "@bryce-loskie/utils": "^0.3.4",
+    "@dcloudio/types": "^3.4.7",
+    "@types/node": "^20.11.16",
+    "@uni-helper/uni-use": "^0.19.6",
+    "@vueuse/core": "9.x.x",
+    "bumpp": "^9.3.0",
+    "eslint": "^8.56.0",
+    "esno": "^4.0.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vitest": "^1.2.2",
+    "vue": "^3.4.15"
   }
 }

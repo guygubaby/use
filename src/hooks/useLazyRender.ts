@@ -1,12 +1,10 @@
 import type { Fn } from '@bryce-loskie/utils'
 import { noop, runOnce, sleep } from '@bryce-loskie/utils'
-import type { Slot, WatchSource } from 'vue'
+import type { Slot, VNode, WatchSource } from 'vue'
 import { ref, watch } from 'vue'
 import { tryOnScopeDispose } from '../misc'
 
-export function useLazyRender(show: WatchSource<boolean | undefined>,
-  delay = 0,
-  fallback?: Slot | (() => JSX.Element)) {
+export function useLazyRender(show: WatchSource<boolean | undefined>, delay = 0, fallback?: Slot | (() => VNode)) {
   let unwatch: Fn = noop
   const inited = ref(false)
 
@@ -38,5 +36,5 @@ export function useLazyRender(show: WatchSource<boolean | undefined>,
 
   tryOnScopeDispose(unwatch)
 
-  return (render: () => JSX.Element) => () => inited.value ? render() : fallback?.()
+  return (render: () => VNode) => () => inited.value ? render() : fallback?.()
 }

@@ -16,7 +16,7 @@ export function useModalVisible() {
 
   const modalVisible = computed<boolean>({
     get() {
-      return !!attrs.modelValue ?? false
+      return !!attrs.modelValue
     },
     set(val) {
       instance.emit('update:modelValue', val)

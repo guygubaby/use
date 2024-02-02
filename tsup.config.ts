@@ -8,8 +8,10 @@ export const tsup: Options = {
   clean: true,
   entry: [
     'src/index.ts',
+    'src/uni/index.ts',
   ],
   external: [
     'vue',
+    '@tanstack/vue-query',
   ],
 }

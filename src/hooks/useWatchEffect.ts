@@ -5,7 +5,7 @@ import { watch } from 'vue'
 import { tryOnScopeDispose } from '../misc'
 
 class Emitter {
-  bus: { onTrue: Fn[]; onFalse: Fn[] }
+  bus: { onTrue: Fn[], onFalse: Fn[] }
 
   constructor() {
     this.bus = {

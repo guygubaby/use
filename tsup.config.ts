@@ -12,6 +12,5 @@ export const tsup: Options = {
   ],
   external: [
     'vue',
-    '@uni-helper/uni-use',
   ],
 }

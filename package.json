@@ -1,5 +1,6 @@
 {
   "name": "@bryce-loskie/use",
+  "type": "commonjs",
   "version": "0.2.1",
   "packageManager": "pnpm@8.15.1",
   "description": "Opinionated vue / uniapp hooks and componets",
@@ -26,9 +27,9 @@
       "require": "./dist/index.js"
     },
     "./uni": {
-      "types": "./dist/uni.d.ts",
-      "import": "./dist/uni.mjs",
-      "require": "./dist/uni.js"
+      "types": "./dist/uni/index.d.ts",
+      "import": "./dist/uni/index.mjs",
+      "require": "./dist/uni/index.js"
     }
   },
   "main": "dist/index.mjs",

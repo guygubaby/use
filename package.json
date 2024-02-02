@@ -1,6 +1,5 @@
 {
   "name": "@bryce-loskie/use",
-  "type": "commonjs",
   "version": "0.2.5",
   "packageManager": "pnpm@8.15.1",
   "description": "Opinionated vue / uniapp hooks and componets",

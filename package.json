@@ -50,14 +50,12 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@tanstack/vue-query": "4.x.x",
     "vue": "^3.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.3",
     "@bryce-loskie/utils": "^0.3.4",
     "@dcloudio/types": "^3.4.7",
-    "@tanstack/vue-query": "4.x.x",
     "@types/node": "^20.11.16",
     "@uni-helper/uni-use": "^0.19.6",
     "@vueuse/core": "9.x.x",

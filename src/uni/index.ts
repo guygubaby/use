@@ -1,4 +1,3 @@
-export * from './useQuery'
 export * from './useDefer'
 export * from './useElementSize'
 export * from './useElementBounding'

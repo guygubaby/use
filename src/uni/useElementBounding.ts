@@ -1,7 +1,11 @@
 import { useSelectorQuery } from '@uni-helper/uni-use'
-import { computed, onMounted, ref } from 'vue'
+import { computed, nextTick, onMounted, ref } from 'vue'
 
-export function useElementBounding(elementSelector: string) {
+interface Options {
+  lazy?: boolean
+}
+
+export function useElementBounding(elementSelector: string, options: Options = { lazy: true }) {
   const { getBoundingClientRect } = useSelectorQuery()
 
   const rect = ref<UniApp.NodeInfo>({
@@ -14,9 +18,14 @@ export function useElementBounding(elementSelector: string) {
     dataset: {},
   })
 
-  onMounted(async () => {
+  const refresh = async () => {
+    if (options.lazy)
+      await nextTick()
+
     rect.value = await getBoundingClientRect(elementSelector)
-  })
+  }
+
+  onMounted(refresh)
 
   const top = computed(() => rect.value.top || 0)
   const left = computed(() => rect.value.left || 0)
@@ -34,5 +43,7 @@ export function useElementBounding(elementSelector: string) {
     bottom,
     right,
     dataset,
+
+    refresh,
   }
 }

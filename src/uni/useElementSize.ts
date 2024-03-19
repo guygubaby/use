@@ -1,7 +1,11 @@
 import { useSelectorQuery } from '@uni-helper/uni-use'
-import { computed, onMounted, ref } from 'vue'
+import { computed, nextTick, onMounted, ref } from 'vue'
 
-export function useElementSize(elementSelector: string) {
+interface Options {
+  lazy?: boolean
+}
+
+export function useElementSize(elementSelector: string, options: Options = { lazy: true }) {
   const { getBoundingClientRect } = useSelectorQuery()
 
   const rect = ref<UniApp.NodeInfo>({
@@ -9,9 +13,14 @@ export function useElementSize(elementSelector: string) {
     height: 0,
   })
 
-  onMounted(async () => {
+  const refresh = async () => {
+    if (options.lazy)
+      await nextTick()
+
     rect.value = await getBoundingClientRect(elementSelector)
-  })
+  }
+
+  onMounted(refresh)
 
   const width = computed(() => rect.value.width || 0)
   const height = computed(() => rect.value.height || 0)
@@ -19,5 +28,6 @@ export function useElementSize(elementSelector: string) {
   return {
     width,
     height,
+    refresh,
   }
 }

@@ -17,6 +17,6 @@ describe('start test useSideEffects', () => {
     const changeDispose = () => {
       sideEffects.dispose = () => {}
     }
-    expect(changeDispose).toThrowErrorMatchingInlineSnapshot('"Cannot assign to read only property \'dispose\' of object \'[object Array]\'"')
+    expect(changeDispose).toThrowErrorMatchingInlineSnapshot(`[TypeError: Cannot assign to read only property 'dispose' of object '[object Array]']`)
   })
 })

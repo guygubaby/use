@@ -8,7 +8,7 @@ interface Options {
 export function useElementSize(elementSelector: string, options: Options = { lazy: true }) {
   const { getBoundingClientRect } = useSelectorQuery()
 
-  const rect = ref<UniApp.NodeInfo>({
+  const rect = ref<UniApp.NodeInfo | undefined>({
     width: 0,
     height: 0,
   })
@@ -17,13 +17,17 @@ export function useElementSize(elementSelector: string, options: Options = { laz
     if (options.lazy)
       await nextTick()
 
-    rect.value = await getBoundingClientRect(elementSelector)
+    try {
+      rect.value = await getBoundingClientRect(elementSelector)
+    }
+    catch (error) {
+    }
   }
 
   onMounted(refresh)
 
-  const width = computed(() => rect.value.width || 0)
-  const height = computed(() => rect.value.height || 0)
+  const width = computed(() => rect.value?.width || 0)
+  const height = computed(() => rect.value?.height || 0)
 
   return {
     width,

@@ -8,7 +8,7 @@ interface Options {
 export function useElementBounding(elementSelector: string, options: Options = { lazy: true }) {
   const { getBoundingClientRect } = useSelectorQuery()
 
-  const rect = ref<UniApp.NodeInfo>({
+  const rect = ref<UniApp.NodeInfo | undefined>({
     top: 0,
     left: 0,
     width: 0,
@@ -22,18 +22,22 @@ export function useElementBounding(elementSelector: string, options: Options = {
     if (options.lazy)
       await nextTick()
 
-    rect.value = await getBoundingClientRect(elementSelector)
+    try {
+      rect.value = await getBoundingClientRect(elementSelector)
+    }
+    catch (error) {
+    }
   }
 
   onMounted(refresh)
 
-  const top = computed(() => rect.value.top || 0)
-  const left = computed(() => rect.value.left || 0)
-  const width = computed(() => rect.value.width || 0)
-  const height = computed(() => rect.value.height || 0)
-  const bottom = computed(() => rect.value.bottom || 0)
-  const right = computed(() => rect.value.right || 0)
-  const dataset = computed(() => rect.value.dataset || {})
+  const top = computed(() => rect.value?.top || 0)
+  const left = computed(() => rect.value?.left || 0)
+  const width = computed(() => rect.value?.width || 0)
+  const height = computed(() => rect.value?.height || 0)
+  const bottom = computed(() => rect.value?.bottom || 0)
+  const right = computed(() => rect.value?.right || 0)
+  const dataset = computed(() => rect.value?.dataset || {})
 
   return {
     top,

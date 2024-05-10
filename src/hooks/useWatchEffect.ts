@@ -1,5 +1,5 @@
 import type { Fn } from '@bryce-loskie/utils'
-import { runAll } from '@bryce-loskie/utils'
+import { runAll, sleep } from '@bryce-loskie/utils'
 import type { WatchOptions, WatchSource } from 'vue'
 import { watch } from 'vue'
 import { tryOnScopeDispose } from '../misc'
@@ -35,6 +35,15 @@ class Emitter {
   }
 }
 
+export type UseWatchEffectOptions = WatchOptions<boolean> & {
+  /**
+   * Delay before call the reset (eg: onFalse / onClose) function
+   *
+   * Used to prevent flickering
+   */
+  resetDelay?: number
+}
+
 /**
  * ```ts
     const isShow = ref(false)
@@ -46,12 +55,18 @@ class Emitter {
     })
     ```
  */
-export function useWatchEffect(source: WatchSource<boolean>, options?: WatchOptions<boolean> | undefined) {
+export function useWatchEffect(source: WatchSource<boolean>, options?: UseWatchEffectOptions) {
   const emitter = new Emitter()
 
-  const unWatch = watch(source, (value) => {
-    const key = value ? 'onTrue' : 'onFalse'
-    emitter.emit(key)
+  const unWatch = watch(source, async (value) => {
+    if (value) {
+      emitter.emit('onTrue')
+    }
+    else {
+      const resetDelay = options?.resetDelay || 0
+      await sleep(resetDelay)
+      emitter.emit('onFalse')
+    }
   }, options)
 
   tryOnScopeDispose(() => {

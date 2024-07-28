@@ -1,12 +1,25 @@
-import { useSelectorQuery } from '@uni-helper/uni-use'
-import { computed, nextTick, onMounted, ref } from 'vue'
+import { computed, getCurrentInstance, nextTick, onMounted, ref } from 'vue'
 
 interface Options {
   lazy?: boolean
 }
 
 export function useElementBounding(elementSelector: string, options: Options = { lazy: true }) {
-  const { getBoundingClientRect } = useSelectorQuery()
+  const instance = getCurrentInstance()
+
+  type RectInfo = UniApp.NodeInfo | undefined
+
+  const queryFn = async (selector: string) => {
+    const selectorQuery = uni.createSelectorQuery().in(instance)
+    return new Promise<RectInfo>((resolve) => {
+      selectorQuery
+        .select(selector)
+        .boundingClientRect((data) => {
+          resolve((data || undefined) as RectInfo)
+        })
+        .exec()
+    })
+  }
 
   const rect = ref<UniApp.NodeInfo | undefined>({
     top: 0,
@@ -23,9 +36,10 @@ export function useElementBounding(elementSelector: string, options: Options = {
       await nextTick()
 
     try {
-      rect.value = await getBoundingClientRect(elementSelector)
+      rect.value = await queryFn(elementSelector)
     }
     catch (error) {
+      console.warn('failed to query bounding client rect', error)
     }
   }
 

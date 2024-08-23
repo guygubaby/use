@@ -12,7 +12,7 @@ interface IOptions<T> {
  *
  * @example
  * ```typescript
- * const { isRefreshingRef, refresherrefresh, scrollProps, scrolltolower } = useScrollViewMisc({
+ * const { isRefreshingRef, refresherrefresh, scrollProps, scrolltolower } = useScrollView({
  *     enableToLower: true,
  *     onRefresh: async () => {
  *       // refresh logic
@@ -33,7 +33,7 @@ interface IOptions<T> {
  *   </scroll-view>
  * ```
  */
-export function useScrollViewMisc<T = any>(options: IOptions<T>) {
+export function useScrollView<T = any>(options: IOptions<T>) {
   const isRefreshingRef = ref(false)
   const isFetchingRef = ref(false)
 

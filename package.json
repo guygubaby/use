@@ -1,7 +1,7 @@
 {
   "name": "@bryce-loskie/use",
   "version": "0.4.6",
-  "packageManager": "pnpm@9.8.0",
+  "packageManager": "pnpm@9.15.0",
   "description": "Opinionated vue / uniapp hooks and componets",
   "author": "guygubaby <guygubaby@gmail.com>",
   "license": "MIT",
@@ -52,21 +52,21 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
-    "@uni-helper/uni-use": "^0.19.12"
+    "@uni-helper/uni-use": "^0.19.14"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.27.1",
-    "@bryce-loskie/utils": "^0.3.5",
-    "@dcloudio/types": "^3.4.12",
-    "@types/node": "^22.5.0",
+    "@antfu/eslint-config": "^3.11.2",
+    "@bryce-loskie/utils": "^0.3.6",
+    "@dcloudio/types": "^3.4.14",
+    "@types/node": "^22.10.1",
     "@vueuse/core": "9.x.x",
-    "bumpp": "^9.5.2",
-    "eslint": "^9.9.0",
-    "esno": "^4.7.0",
-    "tsup": "^8.2.4",
-    "typescript": "^5.5.4",
-    "vite": "^5.4.2",
-    "vitest": "^2.0.5",
-    "vue": "^3.4.38"
+    "bumpp": "^9.9.0",
+    "eslint": "^9.16.0",
+    "esno": "^4.8.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vitest": "^2.1.8",
+    "vue": "^3.5.13"
   }
 }

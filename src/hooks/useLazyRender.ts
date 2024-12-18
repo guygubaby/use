@@ -1,6 +1,6 @@
 import type { Fn } from '@bryce-loskie/utils'
-import { noop, runOnce, sleep } from '@bryce-loskie/utils'
 import type { Slot, VNode, WatchSource } from 'vue'
+import { noop, runOnce, sleep } from '@bryce-loskie/utils'
 import { ref, watch } from 'vue'
 import { tryOnScopeDispose } from '../misc'
 

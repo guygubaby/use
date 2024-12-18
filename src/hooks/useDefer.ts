@@ -1,6 +1,6 @@
+import type { MaybeRef } from '../types'
 import { nextFrame, raf } from '@bryce-loskie/utils/dom'
 import { ref, unref, watch } from 'vue'
-import type { MaybeRef } from '../types'
 
 export enum FpsEnum {
   Fps30 = 30,

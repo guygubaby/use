@@ -1,5 +1,5 @@
-import { assert } from '@bryce-loskie/utils'
 import type { ComponentInternalInstance } from 'vue'
+import { assert } from '@bryce-loskie/utils'
 import { computed, getCurrentInstance, useAttrs } from 'vue'
 
 type ModalInstance = ComponentInternalInstance & {

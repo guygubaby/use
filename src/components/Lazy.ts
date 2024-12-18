@@ -1,5 +1,5 @@
 import type { VNode } from 'vue'
-import { Fragment, defineComponent, h, useSlots } from 'vue'
+import { defineComponent, Fragment, h, useSlots } from 'vue'
 import { useLazyRender } from '../hooks'
 import { createBEM } from '../utils'
 

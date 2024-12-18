@@ -1,6 +1,6 @@
+import type { WatchOptions, WatchSource } from 'vue'
 import { until, whenever } from '@vueuse/core'
 import { onBeforeUnmount, ref } from 'vue'
-import type { WatchOptions, WatchSource } from 'vue'
 
 export function useLazyRender<T>(renderWhen: WatchSource<T | false | null | undefined>, options?: WatchOptions<boolean> | undefined) {
   const shouldRender = ref(false)

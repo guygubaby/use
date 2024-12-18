@@ -1,6 +1,6 @@
 import type { Fn } from '@bryce-loskie/utils'
-import { runAll, sleep } from '@bryce-loskie/utils'
 import type { WatchOptions, WatchSource } from 'vue'
+import { runAll, sleep } from '@bryce-loskie/utils'
 import { watch } from 'vue'
 import { tryOnScopeDispose } from '../misc'
 

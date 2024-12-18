@@ -7,6 +7,15 @@ interface IOptions<T> {
   onScrollToLower?: () => Promise<T> | T
 }
 
+export interface IScrollProps {
+  enableBackToTop: boolean
+  refresherEnabled: boolean
+  refresherThreshold: number
+  showScrollbar: boolean
+  refresherBackground: string
+  lowerThreshold?: number
+}
+
 /**
  * Usage
  *
@@ -57,7 +66,7 @@ export function useScrollView<T = any>(options: IOptions<T>) {
     isRefreshingRef.value = false
   }
 
-  const scrollProps: Record<string, any> = {
+  const scrollProps: IScrollProps = {
     enableBackToTop: true,
     refresherEnabled: true,
     refresherThreshold: 100,
